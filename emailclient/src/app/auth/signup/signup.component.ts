@@ -12,15 +12,14 @@ import { UniqueUsername } from '../validators/unique-username';
 export class SignupComponent {
   authForm = new FormGroup(
     {
-      username: new FormControl('', {
-        validators: [
+      username: new FormControl('',[
           Validators.required,
           Validators.minLength(3),
           Validators.maxLength(20),
           Validators.pattern(/^[a-z0-9]+$/),
         ],
-        asyncValidators:[this.uniqueUsername.validate]
-      }),
+        [this.uniqueUsername.validate]
+      ),
       password: new FormControl('', [
         Validators.required,
         Validators.minLength(4),
