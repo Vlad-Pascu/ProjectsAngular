@@ -8,10 +8,10 @@ describe('PageListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PageListComponent]
+      imports: [PageListComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(PageListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
